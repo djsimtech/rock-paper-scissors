@@ -5,8 +5,8 @@ function playGame() {
   let computerScore = 0;
 
   // Displays current Score
-  console.log('The current Human Score is:', humanScore);
-  console.log('The current Computer Score is:', computerScore);
+  console.log("The current Human Score is:", humanScore);
+  console.log("The current Computer Score is:", computerScore);
 
   // Function to carry out 1 round of play
   function playRound(humanChoice, computerChoice) {
@@ -15,7 +15,7 @@ function playGame() {
 
     // Variable to store Human Choice each round
     let humanSelection = getHumanChoice();
-    console.log('The Human Chose:', humanSelection);
+    console.log("The Human Chose:", humanSelection);
 
     // Function to generate a random choice for the computer
     function getComputerChoice() {
@@ -23,117 +23,117 @@ function playGame() {
       let randomNumber = Math.floor(Math.random() * 3) + 1;
       // console.log('The Random Number for this round is:', randomNumber);
       if (randomNumber === 1) {
-        return 'rock';
+        return "rock";
       } else if (randomNumber === 2) {
-        return 'paper';
+        return "paper";
       } else {
-        return 'scissors';
+        return "scissors";
       }
     }
 
     // Function to Prompt user for input and validate for typos
     function getHumanChoice() {
       // Variable containing valid choices
-      const validChoices = ['rock', 'paper', 'scissors'];
+      const validChoices = ["rock", "paper", "scissors"];
       // Prompt the user for input
-      let input = prompt('Choose Rock, Paper, or Scissors');
+      let input = prompt("Choose Rock, Paper, or Scissors");
 
       // Converts input to lowercase and validates that User provides a valid response without Typo's
       if (validChoices.includes(input.toLowerCase())) {
-        console.log('Valid Choice!');
+        console.log("Valid Choice!");
       } else {
         // If Typo is Found re-run funciton
-        console.log('Invalid Choice.');
+        console.log("Invalid Choice.");
         return getHumanChoice();
       }
       // If choice is valid, return choice
       return input.toLowerCase();
     }
 
-    console.log('The Computer Chose:', computerSelection);
+    console.log("The Computer Chose:", computerSelection);
     // game logic
-    if (humanSelection == 'rock' && computerSelection == 'rock') {
-      console.log('Rock vs Rock = Tie! Play again');
-      console.log('The current Human Score is:', humanScore);
-      console.log('The current Computer Score is:', computerScore);
+    if (humanSelection == "rock" && computerSelection == "rock") {
+      console.log("Rock vs Rock = Tie! Play again");
+      console.log("The current Human Score is:", humanScore);
+      console.log("The current Computer Score is:", computerScore);
       return playRound();
-    } else if (humanSelection == 'rock' && computerSelection == 'paper') {
+    } else if (humanSelection == "rock" && computerSelection == "paper") {
       computerScore = ++computerScore;
-      console.log('Computer Wins: Paper covers Rock!');
-      console.log('The current Human Score is:', humanScore);
-      console.log('The current Computer Score is:', computerScore);
+      console.log("Computer Wins: Paper covers Rock!");
+      console.log("The current Human Score is:", humanScore);
+      console.log("The current Computer Score is:", computerScore);
       return;
-    } else if (humanSelection == 'rock' && computerSelection == 'scissors') {
+    } else if (humanSelection == "rock" && computerSelection == "scissors") {
       humanScore = ++humanScore;
-      console.log('Human Wins: Rock smashes Scissors!');
-      console.log('The current Human Score is:', humanScore);
-      console.log('The current Computer Score is:', computerScore);
+      console.log("Human Wins: Rock smashes Scissors!");
+      console.log("The current Human Score is:", humanScore);
+      console.log("The current Computer Score is:", computerScore);
       return;
-    } else if (humanSelection == 'paper' && computerSelection == 'paper') {
-      console.log('paper vs paper = Tie! Play again');
-      console.log('The current Human Score is:', humanScore);
-      console.log('The current Computer Score is:', computerScore);
+    } else if (humanSelection == "paper" && computerSelection == "paper") {
+      console.log("paper vs paper = Tie! Play again");
+      console.log("The current Human Score is:", humanScore);
+      console.log("The current Computer Score is:", computerScore);
       return playRound();
-    } else if (humanSelection == 'paper' && computerSelection == 'rock') {
+    } else if (humanSelection == "paper" && computerSelection == "rock") {
       humanScore = ++humanScore;
-      console.log('Human Wins: Paper covers Rock!');
-      console.log('The current Human Score is:', humanScore);
-      console.log('The current Computer Score is:', computerScore);
+      console.log("Human Wins: Paper covers Rock!");
+      console.log("The current Human Score is:", humanScore);
+      console.log("The current Computer Score is:", computerScore);
       return;
-    } else if (humanSelection == 'paper' && computerSelection == 'scissors') {
+    } else if (humanSelection == "paper" && computerSelection == "scissors") {
       computerScore = ++computerScore;
-      console.log('Computer Wins: Scissors cuts Paper!');
-      console.log('The current Human Score is:', humanScore);
-      console.log('The current Computer Score is:', computerScore);
+      console.log("Computer Wins: Scissors cuts Paper!");
+      console.log("The current Human Score is:", humanScore);
+      console.log("The current Computer Score is:", computerScore);
       return;
     } else if (
-      humanSelection == 'scissors' &&
-      computerSelection == 'scissors'
+      humanSelection == "scissors" &&
+      computerSelection == "scissors"
     ) {
-      console.log('Scissors vs Scissors = Tie! Play again');
-      console.log('The current Human Score is:', humanScore);
-      console.log('The current Computer Score is:', computerScore);
+      console.log("Scissors vs Scissors = Tie! Play again");
+      console.log("The current Human Score is:", humanScore);
+      console.log("The current Computer Score is:", computerScore);
       return playRound();
-    } else if (humanSelection == 'scissors' && computerSelection == 'rock') {
+    } else if (humanSelection == "scissors" && computerSelection == "rock") {
       computerScore = ++computerScore;
-      console.log('Computer Wins: Rock smashes Scissors!');
-      console.log('The current Human Score is:', humanScore);
-      console.log('The current Computer Score is:', computerScore);
+      console.log("Computer Wins: Rock smashes Scissors!");
+      console.log("The current Human Score is:", humanScore);
+      console.log("The current Computer Score is:", computerScore);
       return;
-    } else if (humanSelection == 'scissors' && computerSelection == 'paper') {
+    } else if (humanSelection == "scissors" && computerSelection == "paper") {
       humanScore = ++humanScore;
-      console.log('Human Wins: Scissors cuts Paper!');
-      console.log('The current Human Score is:', humanScore);
-      console.log('The current Computer Score is:', computerScore);
+      console.log("Human Wins: Scissors cuts Paper!");
+      console.log("The current Human Score is:", humanScore);
+      console.log("The current Computer Score is:", computerScore);
       return;
     }
 
     // Displays updated Score after the round has finished
-    console.log('The current Human Score is:', humanScore);
-    console.log('The current Computer Score is:', computerScore);
+    console.log("The current Human Score is:", humanScore);
+    console.log("The current Computer Score is:", computerScore);
   }
 
   // Plays 5 rounds
-  playRound();
-  playRound();
-  playRound();
-  playRound();
-  playRound();
+  // playRound();
+  // playRound();
+  // playRound();
+  // playRound();
+  // playRound();
 
   // Calculates and displays game winner after 5 rounds
   if (humanScore > computerScore) {
     console.log(
-      'Human wins! With a final score of',
+      "Human wins! With a final score of",
       humanScore,
-      'to',
+      "to",
       computerScore
     );
     return;
   } else {
     console.log(
-      'Computer Wins! With a final score of',
+      "Computer Wins! With a final score of",
       computerScore,
-      'to',
+      "to",
       humanScore
     );
     return;
